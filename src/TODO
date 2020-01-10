@@ -1,0 +1,40 @@
+* intégrer les nouvelles options de date (date --help)
+    %g: 2 derniers chiffres de l'année correspondant au numéro de semaine ISO
+    %G: année correspondant au numéro de semaine ISO (utile avec %V seulement)
+    %N: nanosecondes (000000000..999999999)
+    %u: jour de la semaine 1..7, 1=lundi
+    %U: numéro de la semaine dans l'année débutant par le dimanche
+        comme premier jour de la semaine (00..53)
+    %V: le numéro de la semaine ISO dans l'année débutant par le lundi
+        comme premier jour de la semaine (01..53) 
+	[soit %V, soit %W a changé de spec]
+    %w: le jour de la semaine (0..6);  0 représente le dimanche
+    	[changement de spec]
+    %W: le numéro de la semaine dans l'année débutant par le lundi
+        comme premier jour de la semaine (00..53)
+	[soit %V, soit %W a changé de spec]
+    %Z:	 abréviation alphabétique des fuseaux horaires (i.e. EDT)
+    tags:
+    #:  casse opposée si possible
+    nombre possible après un tag pour indiquer la largeur du champ
+    (en fait, largeur champ = max entre nombre indiqué et place requise)
+* printing float seconds (suggestion de Warren Harris)
+    ==> %N
+* ajouter AC ou BC dans le printer. 
+  Plus généralement, bien afficher les dates avant JC
+* lever limitation intervalles de date (suggestion de Warren Harris)
+* pouvoir gérer facilement les dates moins précises (sans jour ou mois exprimé)
+  (suggestion de Warren Harris). Extensible aux temps et aux calendriers
+* mieux préciser différences version Precise vs standart, en particulier 
+  connaître "the range and precision of each representation" 
+  (suggestion de Warren Harris)
+* constructeurs safe et "unsafe" (pour Date, Time et Calendar)
+* constructeurs prenant le mois sous forme de month (et non de int) en param
+* ouvrir la porte à de nouveaux calendriers en codant plusieurs implantations
+  de Date basés sur divers calendrier (avec signature commune) et en ayant une
+  version fonctorielle des modules basés sur Date (comme Calendar ou 
+  DatePrinter).
+  Mettre alors en place des conversions inter-calendrier (de grégorien vers 
+  julien et vice-versa, etc).
+* adapter par rapport à la nouvelle FAQ et aux fichiers .ps
+* permettre le native dynlink de calendar
