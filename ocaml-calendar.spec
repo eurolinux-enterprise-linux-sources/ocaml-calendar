@@ -3,7 +3,7 @@
 
 Name:           ocaml-calendar
 Version:        2.03.2
-Release:        4%{?dist}
+Release:        5%{?dist}
 Summary:        Objective Caml library for managing dates and times
 
 License:        LGPLv2
@@ -75,6 +75,9 @@ make install
 
 
 %changelog
+* Fri Aug 08 2014 Richard W.M. Jones <rjones@redhat.com> - 2.03.2-5
+- Resolves: rhbz#1125622
+
 * Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 2.03.2-4
 - Mass rebuild 2013-12-27
 
