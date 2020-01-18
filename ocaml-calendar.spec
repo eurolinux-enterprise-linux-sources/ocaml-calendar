@@ -3,14 +3,15 @@
 
 Name:           ocaml-calendar
 Version:        2.03.2
-Release:        5%{?dist}
+Release:        7%{?dist}
 Summary:        Objective Caml library for managing dates and times
 
 License:        LGPLv2
 URL:            http://calendar.forge.ocamlcore.org/
 Source0:        http://forge.ocamlcore.org/frs/download.php/915/calendar-2.03.2.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
-ExcludeArch:    sparc64 s390 s390x
+
+ExcludeArch:    s390
 
 BuildRequires:  ocaml >= 4.00.1
 BuildRequires:  ocaml-findlib-devel >= 1.3.3-3
@@ -75,6 +76,14 @@ make install
 
 
 %changelog
+* Sat Sep 23 2017 Richard W.M. Jones <rjones@redhat.com> - 2.03.2-7
+- Remove ExcludeArch and build on s390x.
+  related: rhbz#1447993
+
+* Fri Sep 22 2017 Richard W.M. Jones <rjones@redhat.com> - 2.03.2-6
+- Rebuild for OCaml 4.05
+  resolves: rhbz#1447993
+
 * Fri Aug 08 2014 Richard W.M. Jones <rjones@redhat.com> - 2.03.2-5
 - Resolves: rhbz#1125622
 
